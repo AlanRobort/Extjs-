@@ -81,8 +81,21 @@
                             };
                         }
                     }
-                ]
-        })
+                ],
+
+                listeners: {
+                    'celldblclick': function (me, td, cellIndex, record, tr, rowIndex, e, eOpts) {
+                        if (cellIndex != 0) {
+                            var info = me.up('grid').columns[cellIndex].text;
+                            Ext.MessageBox.alert({
+                                title: '你点击的是'+info,
+                                msg:'名字是：'+ record.data.NAME,
+                                buttons: Ext.MessageBox.OK,
+                        })
+                        }
+                    }
+                }
+            })
 
         })
 
