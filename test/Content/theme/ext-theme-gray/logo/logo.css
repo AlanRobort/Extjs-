@@ -1,0 +1,79 @@
+﻿.northLeft {
+    float: left;
+    padding: 5px 0 0 5px;
+}
+
+.northLeftlogo {
+    float: left;
+    display: block;
+    background-image: url(logo.png);
+    background-repeat: no-repeat;
+    width: 361px;
+    height: 39px;
+}
+
+.northLeftwelcome {
+    display: block;
+    float: left;
+    margin-top: 20px;
+}
+
+.northright {
+    float: right;
+    margin-top: 15px;
+    text-align: right;
+    padding-left: 8px;
+    width: 204px;
+    height: 28px;
+    background-image: url(btnbg.png);
+    background-repeat: no-repeat;
+}
+
+    .northright .northrightIcon {
+        float: right;
+        margin-top: 4px;
+        width: 60px;
+        height: 28px;
+        cursor: pointer;
+        padding: 3px 8px 0 0;
+        background-repeat: no-repeat;
+    }
+
+        .northright .northrightIcon:hover {
+            color: rgb(232, 165, 29);
+        }
+
+    .northright .icon_help {
+        background-image: url(icon_help.png);
+    }
+
+        .northright .icon_help:hover {
+            background-image: url(icon_help_on.png);
+        }
+
+    .northright .icon_logout {
+        background-image: url(icon_logout.png);
+    }
+
+        .northright .icon_logout:hover {
+            background-image: url(icon_logout_on.png);
+        }
+
+    .northright .icon_setting {
+        background-image: url(icon_setting.png);
+    }
+
+        .northright .icon_setting:hover {
+            background-image: url(icon_setting_on.png);
+        }
+
+.iconbutton {
+    background: none !important;
+    border: none !important;
+}
+
+    .iconbutton *[id$="btnInnerEl"], .iconbutton td {
+        /*color: white !important;*/
+        background: none !important;
+        border: none !important;
+    }
