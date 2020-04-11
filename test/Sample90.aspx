@@ -57,6 +57,8 @@
                 autoWidth: true,
                 height: 1200,
                 store:myStore,
+                enableColumnsMove: false,
+                enableColumnsResize:false,
                 renderTo: 'divPhone',
                 columns: [
 
