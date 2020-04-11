@@ -23,31 +23,39 @@
                         { name: 'NO' ,type:'float'},
                         { name: 'NAME' },
                         { name: 'PHONE' },
-                        { name: 'SEX' },   
-                    ]
+                        { name: 'SEX' },
+                        { name:'BIRTHDAY',type:'date'}
+                    ],
+                    sorters: [
+                        {
+                            //预排序，在store中加入sorters,给NO添加DESC排序
+                            property: 'NO',
+                            direction:'DESC'
+
+                        }]
                 });
 
             var myData = [
-                ['1', 'Canred Chen1', '0982*****1', '1'],
-                ['2', 'Canred Chen2', '0982*****1', '0'],
-                ['3', 'Canred Chen3', '0982*****1', '1'],
-                ['4', 'Canred Chen4', '0982*****1', '0'],
-                ['5', 'Canred Chen5', '0982*****1', '0'],
-                ['6', 'Canred Chen6', '0982*****1', '1'],
-                ['7', 'Canred Chen7', '0982*****1', '0'],
-                ['8', 'Canred Chen8', '0982*****1', '0'],
-                ['9', 'Canred Chen9', '0982*****1', '0'],
-                ['10', 'Canred Chen10', '0982*****1', '1'],
-                ['11', 'Canred Chen11', '0982*****1', '1'],
-                ['12', 'Canred Chen12', '0982*****1', '0'],
-                ['13', 'Canred Chen13', '0982*****1', '0'],
-                ['14', 'Canred Chen14', '0982*****1', '1'],
-                ['15', 'Canred Chen15', '0982*****1', '0'],
-                ['16', 'Canred Chen16', '0982*****1', '1'],
-                ['17', 'Canred Chen17', '0982*****1', '1'],
-                ['18', 'Canred Chen18', '0982*****1', '0'],
-                ['19', 'Canred Chen19', '0982*****1', '0'],
-                ['20', 'Canred Chen20', '0982*****1', '1']
+                ['1','Canred Chen1','0982*****1','1','1980/5/1'],
+                ['2','Canred Chen2','0982*****1','0','1980/5/2'],
+                ['3','Canred Chen3','0982*****1','1','1980/5/3'],
+                ['4','Canred Chen4','0982*****1','0','1980/5/4'],
+                ['5','Canred Chen5','0982*****1','0','1980/5/5'],
+                ['6','Canred Chen6','0982*****1','1','1980/5/6'],
+                ['7','Canred Chen7','0982*****1','0','1980/5/7'],
+                ['8','Canred Chen8','0982*****1','0','1980/5/8'],
+                ['9','Canred Chen9','0982*****1','0','1980/5/9'],
+                ['10','Canred Chen10','0982*****1','1','1980/5/1'],
+                ['11','Canred Chen11','0982*****1','1','1980/5/2'],
+                ['12','Canred Chen12','0982*****1','0','1980/5/3'],
+                ['13','Canred Chen13','0982*****1','0','1980/5/4'],
+                ['14','Canred Chen14','0982*****1','1','1980/5/5'],
+                ['15','Canred Chen15','0982*****1','0','1980/5/6'],
+                ['16','Canred Chen16','0982*****1','1','1980/5/7'],
+                ['17','Canred Chen17','0982*****1','1','1980/5/8'],
+                ['18','Canred Chen18','0982*****1','0','1980/5/9'],
+                ['19','Canred Chen19','0982*****1','0','1980/5/1'],
+                ['20','Canred Chen20','0982*****1','1','1980/5/2']  
             ];
 
             myStore.loadData(myData);
@@ -56,25 +64,33 @@
                 title: "My Grid",
                 autoWidth: true,
                 height: 1200,
-                store:myStore,
+                store: myStore,
                 enableColumnsMove: false,
-                enableColumnsResize:false,
+                enableColumnsResize: false,
                 renderTo: 'divPhone',
                 columns: [
-
                     new Ext.grid.RowNumberer(),
                     {
-                        header: '编号', dataIndex: 'NO',flex:1
+                        header: '编号',
+                        dataIndex: 'NO',
+                        width: 80
                     },
                     {
-                        header: '姓名', dataIndex: 'NAME',flex:2
-                    },
-                    {   
-                        header: '电话', dataIndex: 'PHONE',flex:2
+                        header: '姓名',
+                        dataIndex: 'NAME',
+                        flex: 2
                     },
                     {
-                        header: '性别', dataIndex: 'SEX',flex:1,
+                        header: '电话',
+                        dataIndex: 'PHONE',
+                        flex: 2
+                    },
+                    {
+                        header: '性别',
+                        dataIndex: 'SEX',
+                        flex: 1,
                         align: 'center',
+                        sortable: false,
                         renderer: function(value, record) {
                             if (value == 1) {
                                 return "男";
@@ -82,7 +98,10 @@
                                 return "女";
                             };
                         }
-                    }
+                    },
+                    {
+                        header: '生日', dataIndex: 'BIRTHDAY', type: 'date', flex:2
+        }
                 ],
 
                 listeners: {
