@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Sample90.aspx.cs" Inherits="test.Sample90" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Sample11.aspx.cs" Inherits="test.Sample11" %>
 
 <!DOCTYPE html>
 
@@ -61,11 +61,23 @@
 
                 myStore.loadData(myData);
 
+            var myCheckbox = new Ext.selection.CheckboxModel({
+                listeners: {
+                    selectionChange: function(me, selected, eOpts) {
+                        if (selected.length > 0) {
+                            Ext.MessageBox.alert("提示",selected[0].data.NAME);
+                        }
+                    }
+                }
+
+            })
+
                 var myGrid = new Ext.grid.GridPanel({
                     title: "My Grid",
                     autoWidth: true,
                     height: 1200,
                     store: myStore,
+                    selModel:myCheckbox,
                     //enableColumnsMove: false,
                     //enableColumnsResize: false,
                     renderTo: 'divPhone',

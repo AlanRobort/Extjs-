@@ -3849,6 +3849,7 @@
     <Content Include="Content\theme\icons\zoom.png" />
     <Content Include="Content\theme\icons\zoom_in.png" />
     <Content Include="Content\theme\icons\zoom_out.png" />
+    <Content Include="Sample11.aspx" />
     <Content Include="Sample90.aspx" />
     <Content Include="Script\Extjs\ext-all-dev.js" />
     <Content Include="Script\Extjs\ext-all.js" />
@@ -3880,6 +3881,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sample11.aspx.cs">
+      <DependentUpon>Sample11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sample11.aspx.designer.cs">
+      <DependentUpon>Sample11.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Sample90.aspx.cs">
       <DependentUpon>Sample90.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
